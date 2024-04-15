@@ -22,7 +22,7 @@ echo -e "\033[0;33m-------------------------------------------------------------
 echo -e "|** Welcome to \033[0;35mAWS' Practical AI & Machine Learning Samples\033[0;33m - ASR Workflow Sample **|"
 echo -e "-------------------------------------------------------------------------------------\033[0m"
 echo ""
-echo -e "\033[3;31mNote:\n\t\033[3;37m1. Tested on MacOSX as a proof-of-concept only.\n\t2. Tool assumes you have the AWS CLI, wget, coreutils/gtimeout & JQ working, please install beforehand.\n\t3. To abort execution, check all the 'bash' processes running via another terminal/shell (example: \033[0;35mps aux | grep \"bash\"\033[3;37m).\n\t   Kill those PIDs (example: \033[0;35mkill -9 12345 12346\033[3;37m), typically shows-up 2 processes.\033[0m"
+echo -e "\033[3;31mNote:\n\t\033[3;37m1. Tested on MacOSX 14.4.1 (proof-of-concept).\n\t2. Tool assumes you have the AWS CLI, wget, coreutils/gtimeout & JQ working, please install beforehand.\n\t3. To abort execution, check all the 'bash' processes running via another terminal/shell (example: \033[0;35mps aux | grep \"bash\"\033[3;37m).\n\t   Kill those PIDs (example: \033[0;35mkill -9 12345 12346\033[3;37m), typically shows-up 2 processes.\033[0m"
 echo ""
 echo -e "\033[0;36m"
 IFS=$'\n' read -n 256 -p "** Provide your source audio file hosted in S3. [MP3 only] (type or paste S3 URI here, no backspace/delete, max 256 chars): " -a tempValue
@@ -81,6 +81,6 @@ aws comprehend detect-key-phrases --text "$(<translated-$jobName-decoded.txt)" -
 # aws comprehend detect-targeted-sentiment --text "$(<translated-$jobName-decoded.txt)" --language-code en --output table --no-cli-pager --region ap-southeast-2
 
 echo ""
-echo "\033[0;33m-=[End]=-\033[0m"
+echo -e "\033[0;33m-=[End]=-\033[0m"
 
 ## ... End }
